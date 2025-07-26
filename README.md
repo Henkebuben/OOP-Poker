@@ -1,2 +1,3 @@
 # OOP-Poker
-Online Poker game
+Online Poker Game for 2-5 players
+

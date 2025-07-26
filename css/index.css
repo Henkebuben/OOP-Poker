@@ -1,0 +1,328 @@
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/poppins-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/poppins-v22-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-700 - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v22-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* mea-culpa-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Mea Culpa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/mea-culpa-v6-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+    --button-background-color: rgb(35, 207, 93);
+    --button-background-hover-color: rgb(33, 228, 98);
+}
+
+html {
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-size: calc(62.5% / 2.0);
+}
+
+body {
+    height: 100svh;
+    min-width: 250px;
+    background-color: green;
+}
+
+main {
+    padding: 2rem;
+}
+
+.player-dialog {
+    margin: auto;
+    padding: 2rem;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    border-radius: 10px;
+    font-family: "Poppins", serif;
+    font-size: 1.8rem;
+    background-color: rgb(144, 214, 173);
+    border: 4px solid rgb(235, 229, 229);
+    h2 {
+        padding: 2rem;
+    }
+    fieldset {
+        padding: 2rem;
+        width: 100%;
+        border-radius: 10px;
+        label {
+            padding-right: 1rem;
+        }
+        div {
+            div {
+                padding: 1rem;
+                label {
+                    padding-right: 1rem;
+                }
+            }
+        }
+        input {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 2.5rem;
+            padding: 0.5rem;
+        }
+    }
+    button {
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: var(--button-background-color);
+    }
+
+    button:hover {
+        background-color: var(--button-background-hover-color);
+    }
+}
+
+.collapsed {
+    display: none !important;
+}
+
+.player-collection-container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    row-gap: 2rem;
+}
+
+.player-container {
+    width: fit-content;
+}
+
+.player-name, .player-hand {
+    min-height: 4.2rem;
+    margin: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.player-hand {
+    color: rgb(128, 190, 35);
+    font-family: "Mea Culpa", cursive;
+    font-size: 3rem;
+}
+
+.player-name {
+    color: white;
+    font-family: "Mea Culpa", cursive;
+    font-size: 3rem;
+}
+
+.winner {
+    color: yellow;
+}
+
+.player-card-collection-container {
+    margin: 1rem;
+    padding: 1rem;
+    min-height: 17.2rem;
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.3rem;
+    border: 5px solid rgb(128, 190, 35);
+    border-radius: 10px;
+    perspective: 60rem;
+}
+
+.card-container {
+    position: relative;
+    max-width: 9.8rem;
+    width: 9.8rem;
+    max-height: 13.5rem;
+    height: 13.5rem;
+    border-radius: 3px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-container-outline-orange {
+    outline: 0.5rem solid orange;
+}
+
+.card-container-flip:hover {
+    cursor: alias;
+}
+
+.card-container.is-flipped {
+    transform: rotateY(-180deg);
+}
+
+.card-front-frame, .card-back-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.box-shadow-thin {
+    box-shadow: 2px 2px 10px 0px #160404fd;
+}
+
+.card-back-frame {
+    transform: rotateY(-180deg);
+}
+
+.card-front-image {
+    margin-top: -16rem;
+    margin-left: -11.4rem;
+    width: 32.5rem;
+    aspect-ratio: 10 / 14;
+    object-fit: cover;
+}
+
+.card-back-image {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.footer-margin {
+    width: 100%;
+    max-width: 100%;
+    height: 10rem;
+}
+
+.footer {
+    width: 100%;
+    max-width: 100%;
+    height: 10rem;
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(rgb(131, 97, 97) 0%, rgb(109, 29, 29) 15%, rgb(109, 29, 29) 100%);
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-settings {
+    min-width: 5rem;
+    aspect-ratio: 1 / 1;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-button-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.footer-buttons {
+    width: 10rem;
+    height: 6rem;
+    font-family: "Poppins", serif;
+    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border: 3px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    background-color: var(--button-background-color);
+    color: yellow;
+    box-shadow: 2px 2px 10px 0px #160404fd;
+    cursor: pointer;
+}
+
+.footer-button-disable {
+    background-color: rgb(169, 170, 169);
+}
+
+.footer-buttons:hover {
+    background-color: var(--button-background-hover-color);
+    box-shadow: none;
+}
+
+.footer-button-disable:hover {
+    background-color: rgb(169, 170, 169);
+    box-shadow: 2px 2px 10px 0px #160404fd;
+}
+
+/* On screens that are 650px to 1024px (Tablets & Small Desktops) */
+@media (min-width: 650px) {
+
+    html {
+        font-size: calc(62.5% / 1.25);
+    }
+
+    .player-card-collection-container {
+        flex-wrap: no-wrap;
+    }
+
+    .footer {
+        grid-template-columns: 10rem 1fr 10rem;
+    }
+
+    .footer-buttons {
+        width: 15rem;
+        font-size: 3rem;
+    }
+}
+
+/* On screens that are 1024px or more (Medium & Large Desktops) */
+@media (min-width: 1024px) {
+
+    html {
+        font-size: 62.5%;
+    }
+}

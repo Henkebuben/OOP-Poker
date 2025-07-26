@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Online Poker Game for 2-5 players">
+        <meta property="og:url" content="https://chas-henrik.github.io/OOP-Poker/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Online Poker Game">
+        <meta property="og:description" content="Online Poker Game for 2-5 players">
+        <meta property="og:site_name" content="GitHub Pages">
+        <meta property="og:image" content="https://chas-henrik.github.io/OOP-Poker/img/poker.png">
+        <meta property="og:image:width" content="250">
+        <meta property="og:image:height" content="125">
+        <link rel="preload" href="./fonts/mea-culpa-v6-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="./fonts/poppins-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link href="./fonts/poppins-v22-latin-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="./fonts/poppins-v22-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="./fonts/poppins-v22-latin-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="./img/favicon.png" type="image/png">
+        <link rel="preload stylesheet" href="./css/index.css" as="style" fetchpriority="high">
+        <script src="./index.js" type="module"></script>
+        <title>Online Poker</title>
+    </head>
+    <body>
+        <main>
+            <dialog id="player-dialog-id" class="player-dialog collapsed" data-player_cnt="2">
+                <h2>Enter Player Names</h2>
+                <fieldset id="player-dialog-fieldset-id">
+                    <legend>Select number of Players</legend>
+                    <button type="button" data-input_fields="2" class="player-dialog-cnt-btn">2</button>
+                    <button type="button" data-input_fields="3" class="player-dialog-cnt-btn">3</button>
+                    <button type="button" data-input_fields="4" class="player-dialog-cnt-btn">4</button>
+                    <button type="button" data-input_fields="5" class="player-dialog-cnt-btn">5</button>
+                </fieldset>
+                <fieldset>
+                    <legend>Player Name</legend>
+                    <div id="player-dialog-name-container-id"></div>
+                </fieldset>
+                <button type="button" id="player-dialog-ok-btn-id">OK</button>
+            </dialog>
+            <div id="player-collection-container-id" class="player-collection-container"></div>
+        </main>
+        <div class="footer-margin"></div>
+        <footer class="footer">
+            <img src="./svg/settings.svg" alt="Settings" id="footer-settings-id" class="footer-settings">  
+            <div class="footer-button-menu">
+                <button id="deal-button-id" class="footer-buttons">DEAL</button>
+                <button id="draw-button-id" class="footer-buttons footer-button-disable">DRAW</button>
+            </div>   
+        </footer>
+    </body>
+</html>
